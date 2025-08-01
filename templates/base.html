@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <!-- Top Header -->
+    <div class="py-2 border-bottom" style="background-color: #cf5c0eff;">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap text-dark small">
+        <!-- Left: Contact Info -->
+        <div class="mb-2 mb-md-0">
+          <i class="bi bi-envelope-fill me-2 text-warning"></i><strong class="text-white">olyschaighar@gmail.com</strong>
+          <span class="mx-3 text-white">|</span>
+          <i class="bi bi-telephone-fill me-2 text-warning"></i><strong class="text-white">+91 9868227715</strong>
+        </div>
+
+        <!-- Right: Social Icons -->
+        <div>
+          <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <!-- Brand/Logo -->
+        <a class="navbar-brand d-flex flex-column align-items-start" href="#">
+          <div class="d-flex align-items-center">
+            <span class="fs-2 fw-bold" style="font-family: 'Pacifico', cursive; color: #ffa347;">Oly’s</span>
+            <span class="fs-5 fw-bold ms-1 text-warning">Chai-Ghar</span>
+          </div>
+          <small class="text-light text-warning ms-1" style="font-size: 1rem;">Tea | Snacks | Gossips</small>
+        </a>
+
+        <!-- Toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light fw-semibold mx-2" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fw-semibold mx-2" href="{% url 'menu' %}">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fw-semibold mx-2" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fw-semibold mx-2" href="{% url 'frenchisee' %}">Franchise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fw-semibold mx-2" href="{% url 'contact' %}">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fw-semibold mx-2" href="{% url 'gallery' %}">Gallery</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+    <footer class="text-white pt-5 pb-4" style="background-color: #cf5c0eff;">
+      <div class="container text-md-left">
+        <div class="row text-md-left">
+          <!-- Company Info -->
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <span class="fs-2 fw-bold text-warning" style="font-family: 'Pacifico', cursive;">Oly’s</span>
+            <span class="fs-5 ms-1 text-light" style="font-family: 'Dancing Script', cursive;">Chai-ghar</span>
+            <p>Serving 100+ tea varieties with ghar jaisa swaad. A perfect place for chai lovers and cozy conversations.</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light" >Quick Links</h5>
+            <p>
+              <a href="{% url 'about' %}" class="text-white" style="text-decoration: none;">About Us</a>
+            </p>
+            <p>
+              <a href="{% url 'menu' %}" class="text-white" style="text-decoration: none;">Menu</a>
+            </p>
+            <p>
+              <a href="{% url 'frenchisee' %}" class="text-white" style="text-decoration: none;">Frenchisee</a>
+            </p>
+            <p>
+              <a href="{% url 'contact' %}" class="text-white" style="text-decoration: none;">Contact</a>
+            </p>
+          </div>
+
+          <!-- Franchise CTA -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Join Us</h5>
+            <p>
+              <a href="{% url 'frenchisee' %}" class="text-white" style="text-decoration: none;">Get Franchise</a>
+            </p>
+            <p>
+              <a href="#career" class="text-white" style="text-decoration: none;">Careers</a>
+            </p>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-light">Contact</h5>
+            <p>
+              <i class="fas fa-home mr-3"></i> Head Office: Third Floor, Property No. 6, Avtar Enclave, Paschim Vihar, New Delhi - 110063 (India)
+            </p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> olyschaighar@gmail.com
+            </p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> +91 9868227715
+            </p>
+          </div>
+        </div>
+
+        <hr class="mb-4" />
+
+        <!-- Bottom Row -->
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p>
+              © 2025 <strong>Oly’s Chai-Ghar</strong> — All Rights Reserved
+            </p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <a href="#" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a href="https://wa.me/9868227715?text=Hi%20Flayer%20Wings%2C%20I%20am%20interested%20in%20your%20services" class="btn btn-success rounded-circle shadow position-fixed d-flex align-items-center justify-content-center" style="bottom: 20px; right: 20px; width: 70px; height: 70px; z-index: 9999;" target="_blank" title="Chat with us on WhatsApp"><i class="fab fa-whatsapp fa-lg text-white"></i></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Typed('#typed', {
+          strings: ['100+ varieties of teas', 'Kulhad ki Khushboo', 'Ghar Jaisa Sukoon', 'Experience India’s most heartfelt chai cafe'],
+          typeSpeed: 55,
+          backSpeed: 35,
+          backDelay: 1800,
+          loop: true,
+          smartBackspace: true,
+          showCursor: true,
+          cursorChar: '|'
+        })
+      })
+    </script>
+    <script>
+      AOS.init()
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Swiper('.reviewSwiper', {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          breakpoints: {
+            768: { slidesPerView: 2 },
+            992: { slidesPerView: 3 }
+          }
+        })
+      })
+    </script>
+    {% if messages %}
+      <script>
+        const messageModal = new bootstrap.Modal(document.getElementById('messageModal'))
+        messageModal.show()
+      </script>
+    {% endif %}
+  </body>
+</html>

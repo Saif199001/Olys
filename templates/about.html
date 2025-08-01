@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  About
+{% endblock %}
+{% block content %}
+  <!-- Hero Banner -->
+  <section class="py-5 text-white text-center" style="background: url( '../static/images/aboutbanner1.png') no-repeat center center / cover; width: 100%; height: 100vh; height: 500px;">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold">About Oly’s Chai-Ghar</h1>
+      <p class="lead">“Jaha Chai Hai, Wahi Ghar Hai”</p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4" data-aos="fade-right">
+          <img src="{% static 'images/olysowner.jpeg' %}" class="img-fluid ownerpic" style="width: 400px; height: 500px;" alt="Our Story" />
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <h2 class="fw-bold" style="color: #ff7b00;">Our Story</h2>
+          <p class="lead text-white">Started with a passion for chai and a dream to create homely moments, Oly’s Chai-Ghar has grown into a soulful space offering 100+ varieties of teas served in traditional kullhads.</p>
+          <p class="text-white">
+            <strong class="fw-bold">Satpal Arora, Founder – Olys Chai Ghar</strong> "I started Olys Chai Ghar with one belief — a cup of tea can spark conversations, build bonds, and inspire dreams. Today, it’s more than tea — it’s a place where Tea, Snacks & Gossips come alive.
+
+            Join us. Let’s build a chai culture the world remembers."Satpal Arora
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark">Our Vision & Mission</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="p-4 bg-white shadow rounded h-100">
+            <h4 class="text-warning fw-bold"><i class="bi bi-eye"></i> Vision</h4>
+            <p>To make Olys Chai Ghar a global symbol of warmth, friendship, and everyday joy — where one cup of tea can start a story, spark a dream, or build a future.</p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-4 bg-white shadow rounded h-100">
+            <h4 class="text-success fw-bold"><i class="bi bi-bullseye"></i> Mission</h4>
+            <p>To craft unforgettable tea experiences that feel like home — no matter where you are in the world.
+
+              To inspire entrepreneurship through our franchise model, making success accessible to every chai lover.
+
+              To turn “Tea. Snacks. Gossips.” into a movement — a lifestyle that brings people together, one sip at a time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us CTA -->
+  <section class="py-5 text-white">
+    <div class="container text-center" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="display-5 fw-bold mb-3" style="font-family: 'Pacifico', cursive;">Become a Part of Oly’s Chai-Ghar Family!</h2>
+      <p class="lead mb-4" style="max-width: 700px; margin: auto;">
+        Start your own chai journey with over <strong>100+ tea varieties</strong>, authentic recipes, and a growing fanbase. Join a rapidly expanding brand with desi vibes and modern touch!
+      </p>
+      <a href="{% url 'frenchisee' %}" class="btn btn-warning btn-lg px-5 py-3 fw-semibold rounded-pill shadow">Apply for Franchise Now</a>
+      <p class="mt-3">
+        <small><i class="bi bi-phone"></i> Call us: +91-7752987573 | <i class="bi bi-envelope"></i> info@olyschaighar.in</small>
+      </p>
+    </div>
+  </section>
+{% endblock %}

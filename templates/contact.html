@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}
+  Contact Us
+{% endblock %}
+{% block content %}
+  {% if messages %}
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header {% if messages.0.tags == 'success' %}
+              
+              bg-success
+
+            {% else %}
+              
+              bg-danger
+
+            {% endif %} text-white">
+            <h5 class="modal-title" id="messageModalLabel">
+              {% if messages.0.tags == 'success' %}
+                Success
+              {% else %}
+                Error
+              {% endif %}
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}" role="alert">{{ message }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <section class="contact-header py-5 text-white text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold" style="font-family: 'Pacifico', cursive;">Get in Touch</h1>
+      <p class="lead">Have a question? Want to collaborate? We’d love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="contact-form py-5">
+    <div class="container text-white">
+      <div class="row g-5">
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <h3 class="mb-4 fw-semibold">Send us a Message</h3>
+          <form action="{% url 'save_contact' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Full name" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" name="email" placeholder="Email address" />
+            </div>
+            <div class="mb-3">
+              <label for="mobile_no" class="form-label">Phone Number</label>
+              <input type="number" class="form-control" name="mobile_no" placeholder="Enter your mobile number" required />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning px-4 py-2 rounded-pill shadow">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-6">
+          <h3 class="mb-4 fw-semibold">Reach Us At</h3>
+          <ul class="list-unstyled fs-5">
+            <li>
+              <i class="bi bi-geo-alt-fill text-warning me-2"></i> Head Office: Third Floor, Property No. 6, Avtar Enclave, Paschim Vihar, New Delhi - 110063 (India)
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill text-warning me-2"></i> +91 98682 27715
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill text-warning me-2"></i> olyschaighar@gmail.com
+            </li>
+            <li>
+              <i class="bi bi-clock-fill text-warning me-2"></i> Mon - Sat: 9:00 AM to 9:00 PM
+            </li>
+          </ul>
+
+          <h5 class="mt-4 mb-3 fw-bold">Follow Us</h5>
+          <div>
+            <a href="#" class="text-warning fs-4 me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-warning fs-4 me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-warning fs-4 me-3"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-warning fs-4"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

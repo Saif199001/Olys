@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}
+  Franchisee
+{% endblock %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="text-light py-5 text-center">
+  <div class="container" data-aos="fade-up">
+    <h1 class="display-4 fw-bold">Join India’s Fastest Growing Tea Café Chain!</h1>
+    <p class="lead mt-3">Where every cup brews a dream—and every franchise builds a future.</p>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center" data-aos="fade-right" data-aos-delay="300">
+      <div class="col-md-6">
+        <img src="{% static 'images/benifits.png' %}" alt="Franchise Benefits" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+        <h2 class="fw-bold mb-4">💡 Why Choose Oly’s Chai Ghar Franchise?</h2>
+        <p>In a country where chai is more than just a drink, Oly’s brings you an opportunity to create something iconic.</p>
+        <ul class="list-unstyled mt-3">
+          <li class="mb-3">🔸 <strong>100+ Varieties of Handcrafted Teas</strong><br><small>From cutting chai to exotic herbal blends.</small></li>
+          <li class="mb-3">🔸 <strong>High-Profit Business Model – Upto 100% Margin</strong></li>
+          <li class="mb-3">🔸 <strong>Minimal Investment, Maximum Returns</strong><br><small>Just ₹4.69 Lakhs – includes café setup, 1 month material & more.</small></li>
+          <li class="mb-3">🔸 <strong>Desi Vibes, Modern Systems</strong><br><small>POS software, marketing, and backend support.</small></li>
+          <li class="mb-3">🔸 <strong>Complete Business Setup Support</strong><br><small>You serve chai, we handle the rest.</small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE PROVIDE -->
+<section class="py-5 text-white">
+  <div class="container text-center" data-aos="fade-up" data-aos-delay="500">
+    <h2 class="mb-4 fw-bold">🛠️ We Provide</h2>
+    <div class="row g-4">
+      {% for item in franchise_benefits %}
+      <div class="col-md-4">
+        <div class="border border-light p-4 rounded h-100 bg-dark bg-opacity-25">
+          <h5 class="fw-bold">{{ item }}</h5>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION FLEXIBILITY -->
+<section class="py-5 bg-light text-center">
+  <div class="container" data-aos="fade-up" data-aos-delay="500">
+    <h2 class="fw-bold mb-3">📍 Location Flexibility</h2>
+    <p class="lead">Open your outlet where the chai demand never sleeps!</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+      {% for place in locations %}
+      <span class="badge bg-success text-white fs-6 px-4 py-2">{{ place }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS QUOTE -->
+<section class="py-5 text-white text-center">
+  <div class="container" data-aos="fade-up" data-aos-delay="300">
+    <blockquote class="blockquote">
+      <p class="mb-4 fs-4" style="font-family: 'Pacifico', cursive ;">"Chai ke saath sirf taste nahi, ek culture serve karte hain. Har sip me yaari, har plate me yaadein."</p>
+      <footer class="blockquote-footer text-white-50">— Founders of Oly’s Chai Ghar</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-5 text-center text-light">
+  <div class="container" data-aos="fade-up" data-aos-delay="300">
+    <h2 class="fw-bold mb-3" style="font-family: 'Pacifico', cursive;">🔥 Let’s Brew Success Together!</h2>
+    <p class="lead">📧 <strong>Email:</strong> olyschaighar@gmail.com &nbsp; | &nbsp; 📞 <strong>Call/WhatsApp:</strong> +91 98682 27715</p>
+    <a href="{% url 'contact' %}" class="btn btn-warning mt-3 px-4 py-2 fs-5">🚀 Apply for Franchise Today</a>
+    <p class="mt-3"><small>Limited slots per city – Act fast!</small></p>
+  </div>
+</section>
+
+{% endblock %}
