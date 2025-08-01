@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: auto;
-    background-color: #708850;
 }
 .navbar-nav .nav-link:hover {
   color: #d86929 !important;
